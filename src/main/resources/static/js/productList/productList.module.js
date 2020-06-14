@@ -1,0 +1,1 @@
+var productList = angular.module('productList', ['core.product', 'ngRoute']);

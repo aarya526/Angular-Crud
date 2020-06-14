@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Add Product</title>
+	<style>
+		.invalid-feedback {
+			display: block;
+			text-transform: capitalize;
+		}
+
+		.invalid {
+			border-color: #dc3545;
+		}
+
+		.invalid:focus {
+			border-color: #dc3545;
+			box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, .25);
+		}
+	</style>
+</head>
+
+<body>
+	<div header></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="/#!/products" class="btn btn-primary" style="margin: 20px 0;">Product List</a>
+				<h2>{{!product.id ? 'Add Product' : 'Update Product with ID ' +
+					product.id}}</h2>
+			</div>
+		</div>
+		<hr />
+		<form name="productForm" ng-submit="submit()">
+			<input type="hidden" ng-model="product.id">
+			<!-- <div class="form-group">
+				<label for="productName">Enter Product ID:</label> <input type="text" class="form-control col-md-6"
+					ng-class="{'invalid' : errors.id}" placeholder="Enter Product ID" ng-model="product.id" name="id"
+					id="id">
+				<div class="invalid-feedback" ng-bind="errors.id"></div>
+			</div> -->
+			<div class="form-group">
+				<label for="productName">Enter Product Name:</label> <input type="text" class="form-control col-md-6"
+					ng-class="{'invalid' : errors.productName}" placeholder="Enter Product Name"
+					ng-model="product.productName" name="productName" id="productName">
+				<div class="invalid-feedback" ng-bind="errors.productName"></div>
+			</div>
+			<div class="form-group">
+				<label for="brand">Enter Brand:</label> <input type="text" class="form-control col-md-6"
+					ng-class="{'invalid' : errors.brand}" placeholder="Enter Brand" ng-model="product.brand"
+					name="brand" id="brand">
+				<div class="invalid-feedback" ng-bind="errors.brand"></div>
+			</div>
+			<div class="form-group">
+				<label for="brand">Select Category:</label><select ng-model="product.category" name="category"
+					class="form-control col-md-6" ng-class="{'invalid' : errors.category }">
+					<option ng-value="" ng-selected="select">Select</option>
+					<option ng-repeat="x in categories" ng-value="x">{{x}}</option>
+				</select>
+				<div class="invalid-feedback" ng-bind="errors.category"></div>
+			</div>
+			<div class="form-group">
+				<label for="quantity">Enter Quantity:</label> <input type="number" class="form-control col-md-6"
+					ng-class="{'invalid' : errors.quantity}" placeholder="Enter Quantity" ng-model="product.quantity"
+					name="quantity" id="quantity">
+				<div class="invalid-feedback" ng-bind="errors.quantity"></div>
+			</div>
+			<div class="form-group">
+				<label for="listPrice">Enter List Price:</label> <input type="number" class="form-control col-md-6"
+					ng-class="{'invalid' : errors.listPrice}" placeholder="Enter List Price"
+					ng-model="product.listPrice" name="listPrice" id="listPrice">
+				<div class="invalid-feedback" ng-bind="errors.listPrice"></div>
+			</div>
+			<div class="form-group">
+				<label for="ourPrice">Enter Our Price:</label> <input type="number" class="form-control col-md-6"
+					ng-class="{'invalid' : errors.ourPrice}" placeholder="Enter Our Price" ng-model="product.ourPrice"
+					name="ourPrice" id="ourPrice">
+				<div class="invalid-feedback" ng-bind="errors.ourPrice"></div>
+			</div>
+			<div class="form-group">
+				<label for="description">Enter Description:</label>
+				<textarea class="form-control col-md-6" ng-class="{'invalid' : errors.description}" name="description"
+					ng-model="product.description" cols="22" rows="5" style="resize: none;"
+					Placeholder="Enter Product Descrpiton"></textarea>
+				<div class="invalid-feedback" ng-bind="errors.description"></div>
+			</div>
+			<button type="submit" class="btn btn-success">{{!product.id
+				? 'Add' : 'Update'}}</button>
+			<button type="button" class="btn btn-dark" ng-click="reset()">Reset</button>
+		</form>
+	</div>
+</body>
+
+</html>

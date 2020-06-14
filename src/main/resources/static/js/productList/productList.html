@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Product List</title>
+</head>
+
+<body>
+	<div header></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="/#!/addProduct" class="btn btn-primary" style="margin: 20px 0;">Add
+					Product</a>
+				<h2>Product List</h2>
+				<hr />
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Product Name</th>
+								<th>Brand</th>
+								<th>Category</th>
+								<th>Quantity</th>
+								<th>List Price</th>
+								<th>Our Price</th>
+								<th>Description</th>
+								<th>Info</th>
+								<th>Update</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="p in products">
+								<td>{{p.id}}</td>
+								<td>{{p.productName}}</td>
+								<td>{{p.brand}}</td>
+								<td>{{p.category}}</td>
+								<td>{{p.quantity}}</td>
+								<td>{{'&#8377;' + p.listPrice}}</td>
+								<td>{{'&#8377;' + p.ourPrice}}</td>
+								<td>{{p.description}}</td>
+								<td><a class="btn btn-outline-dark" ng-href="/#!/product-details/{{p.id}}">Info</a></td>
+								<td><a class="btn btn-outline-warning" ng-href="/#!/updateProduct/{{p.id}}">Update</a>
+								</td>
+								<td><a class="btn btn-outline-danger" ng-click="remove(p.id)">Delete</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

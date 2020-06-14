@@ -24,7 +24,7 @@ crudApp.directive('header', function () {
 
 			// });
 
-			$scope.categories = ["Smartphone", "Laptop", "Tablet", "Accessories"];
+			$scope.categories = ["Smartphones", "Laptops", "Tablets", "Accessories"];
 
 		}]
 	}

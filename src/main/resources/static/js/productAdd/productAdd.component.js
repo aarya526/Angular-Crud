@@ -11,7 +11,7 @@ productAdd.component('productAdd', {
 			$window) {
 
 
-			$scope.categories = [];
+			$scope.categories = ["Smartphones", "Laptops", "Tablets", "Accessories"];
 
 			if ($routeParams.pid != null) {
 
@@ -30,15 +30,15 @@ productAdd.component('productAdd', {
 			}
 
 
-			$http({
-				method: "Get",
-				url: "/product/categories"
-			}).then(function success(response) {
-				$scope.categories = response.data;
+			// $http({
+			// 	method: "Get",
+			// 	url: "/product/categories"
+			// }).then(function success(response) {
+			// 	$scope.categories = response.data;
 
-			}, function error(response) {
-				alert(response.data);
-			});
+			// }, function error(response) {
+			// 	alert(response.data);
+			// });
 
 
 			$scope.save = function () {

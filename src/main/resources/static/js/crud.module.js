@@ -9,20 +9,22 @@ crudApp.directive('header', function () {
 		controller: ['$scope', '$filter', '$http', 'Product', function ($scope, $filter, $http, Product) {
 
 
-			$http({
+			// $http({
 
-				method: "get",
-				url: "/product/categories"
+			// 	method: "get",
+			// 	url: "/product/categories"
 
-			}).then(function success(response) {
+			// }).then(function success(response) {
 
-				$scope.categories = response.data;
+			// 	$scope.categories = response.data;
 
-			}, function error(response) {
+			// }, function error(response) {
 
-				alert(response.data);
+			// 	alert(response.data);
 
-			});
+			// });
+
+			$scope.categories = ["Smartphone", "Laptop", "Tablet", "Accessories"];
 
 		}]
 	}

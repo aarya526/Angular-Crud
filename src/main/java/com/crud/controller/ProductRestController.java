@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -21,12 +22,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.model.Product;
 import com.crud.service.CategoryService;
 import com.crud.service.ProductService;
+import com.crud.utility.UtilityClass;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
@@ -40,6 +41,9 @@ public class ProductRestController {
 
 	@Autowired
 	private CategoryService categoryService;
+
+	@Autowired
+	private UtilityClass uc;
 
 	ObjectMapper om = new ObjectMapper();
 
@@ -72,11 +76,11 @@ public class ProductRestController {
 	// ===============Retrieve All Products==============
 
 	@GetMapping("/all")
-	public String listAllProducts() throws Exception {
+	public String listAllProducts(HttpServletRequest request) throws Exception {
 
 		List<Product> products = productService.listAll();
 		String s = om.writeValueAsString(products);
-		System.out.println(s);
+		System.out.println("Client's IP Address : " + request.getRemoteAddr());
 		return s;
 
 	}

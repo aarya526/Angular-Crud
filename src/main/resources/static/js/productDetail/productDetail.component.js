@@ -1,4 +1,4 @@
-productDetail.component('productDetail', {
+product.component('productDetail', {
 
 	templateUrl : "/js/productDetail/productDetail.html",
 	controller : [

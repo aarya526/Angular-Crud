@@ -1,1 +1,0 @@
-var productAdd = angular.module('productAdd', [ 'core.product', 'ngRoute' ]);

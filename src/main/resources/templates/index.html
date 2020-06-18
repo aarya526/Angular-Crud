@@ -2,29 +2,34 @@
 <html ng-app="crudApp">
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<style>
-		.container {
-			margin-top: 40px;
-			margin-bottom: 40px;
-			/* border: 1px grey solid;
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<style>
+.container {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	/* border: 1px grey solid;
 			padding: 20px;
 			border-radius: 10px; */
-		}
-	</style>
+}
+</style>
 </head>
 
 <body>
+	<div header></div>
 	<ng-view></ng-view>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 		crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 	<script src="https://code.angularjs.org/1.7.6/angular.min.js"></script>
@@ -35,14 +40,14 @@
 	<script src="/js/crud.config.js"></script>
 	<!-- <script src="/js/authentication/login.module.js"></script>
 	<script src="/js/authentication/login.component.js"></script> -->
-	<script src="/js/productAdd/productAdd.module.js"></script>
+	<script src="/js/product/product.module.js"></script>
+	<script src="/js/cart/cart.module.js"></script>
+	<script src="/js/cart/cartStatus.component.js"></script>
 	<script src="/js/productAdd/productAdd.component.js"></script>
-	<script src="/js/productDetail/productDetail.module.js"></script>
 	<script src="/js/productDetail/productDetail.component.js"></script>
-	<script src="/js/productList/productList.module.js"></script>
 	<script src="/js/productList/productList.component.js"></script>
 	<script src="/js/productList/productCategory.component.js"></script>
-	<script src="/js/service/product.module.js"></script>
+	<script src="/js/service/cartItem.service.js"></script>
 	<script src="/js/service/product.service.js"></script>
 	<!-- <script src="/js/service/login.service.js"></script> -->
 </body>

@@ -1,41 +1,34 @@
-productList.component('productCategory', {
+product.component('productCategory', {
 
+	templateUrl : "/js/productList/productList.html",
+	controller : [ 'Product', '$scope', '$http', '$location', '$routeParams',
+			function(Product, $scope, $http, $location, $routeParams) {
 
-	templateUrl: "/js/productList/productList.html",
-	controller: ['Product',
-		'$scope',
-		'$http',
-		'$location',
-		'$routeParams', function (Product, $scope, $http, $location, $routeParams) {
+				$scope.fetchProductByCategory = function() {
 
+					$scope.products = Product.findByCategory({
 
-			$scope.fetchProductByCategory = function () {
+						pid : $routeParams.pid
 
-				$scope.products = Product.findByCategory({
+					}, function(product) {
 
-					pid: $routeParams.pid
+						console.log(product);
+					}, function() {
 
-				}, function (product) {
+					});
+				}
+				$scope.fetchProductByCategory();
+				$scope.remove = function(id) {
 
-					console.log(product);
-				}, function () {
+					Product.remove({
+						pid : id
+					}, function() {
 
-				});
-			}
-			$scope.fetchProductByCategory();
-			$scope.remove = function (id) {
+						$scope.fetchProductByCategory();
 
-				Product.remove({
-					pid: id
-				}, function () {
+					});
+				}
 
-
-					$scope.fetchProductByCategory();
-
-				});
-			}
-
-		}]
-
+			} ]
 
 })

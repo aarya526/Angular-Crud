@@ -80,7 +80,6 @@ public class ProductRestController {
 
 		List<Product> products = productService.listAll();
 		String s = om.writeValueAsString(products);
-		System.out.println("Client's IP Address : " + request.getRemoteAddr());
 		return s;
 
 	}

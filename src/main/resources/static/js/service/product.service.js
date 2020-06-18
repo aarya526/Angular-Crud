@@ -1,30 +1,29 @@
-angular.module('core.product').factory('Product',
-	['$resource', function ($resource) {
+product.factory('Product', [ '$resource', function($resource) {
 
-		return $resource('product/:pid', {}, {
+	return $resource('product/:pid', {}, {
 
-			query: {
+		query : {
 
-				method: "get",
-				params: {
+			method : "get",
+			params : {
 
-					pid: 'all'
+				pid : 'all'
 
-				},
-				isArray: true
 			},
-			update: {
+			isArray : true
+		},
+		update : {
 
-				method: 'PUT'
-			},
-			findByCategory: {
+			method : 'PUT'
+		},
+		findByCategory : {
 
-				method: "get",
-				url: "/product/category/:pid",
-				isArray: true
+			method : "get",
+			url : "/product/category/:pid",
+			isArray : true
 
-			}
+		}
 
-		})
+	})
 
-	}]);
+} ]);

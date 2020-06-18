@@ -4,19 +4,18 @@
 	<a class="navbar-brand" href="/#!/">Angular Crud</a>
 
 	<!-- Toggler/collapsibe Button -->
-	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
 	<!-- Navbar links -->
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link" href="/#!/">All</a>
-			</li>
-			<li class="nav-item" ng-repeat="x in  categories">
-				<a class="nav-link" ng-href="/#!/findByCategory/{{x}}">{{x}}</a>
-			</li>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item"><a class="nav-link" href="/#!/">All</a></li>
+			<li class="nav-item" ng-repeat="x in  categories"><a
+				class="nav-link" ng-href="/#!/findByCategory/{{x}}">{{x}}</a></li>
 		</ul>
+		<cart-status></cart-status>
 	</div>
 </nav>

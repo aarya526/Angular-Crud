@@ -37,7 +37,7 @@ public class ShoppingCartRestController {
 	@GetMapping("/count")
 	public int countCartItems(HttpServletRequest request) {
 
-		String ipAddress = request.getRemoteAddr();
+		String ipAddress = request.getRemoteHost();
 		int count = 0;
 		ShoppingCart sc = scService.findByIpAddress(ipAddress);
 		if (sc == null) {
@@ -65,7 +65,7 @@ public class ShoppingCartRestController {
 	public ResponseEntity<?> addToCart(@RequestParam String id, HttpServletRequest request) {
 
 		Product product = productService.findById(id);
-		ShoppingCart sc = scService.findByIpAddress(request.getLocalAddr());
+		ShoppingCart sc = scService.findByIpAddress(request.getRemoteHost());
 		List<CartItem> cartItems = cartItemService.findByShoppingCart(sc);
 		for (CartItem c : cartItems) {
 

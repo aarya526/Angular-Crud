@@ -12,7 +12,7 @@ public class ShoppingCart {
 	@Id
 	private String id;
 
-	private BigDecimal grandTotal;
+	private BigDecimal grandTotal = new BigDecimal(0);
 
 	private String ipAddress;
 

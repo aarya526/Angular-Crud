@@ -83,7 +83,8 @@ public class ShoppingCartRestController {
 		c.setRequestQty(1);
 		c.setSc(sc);
 		cartItemService.save(c);
-		sc.setGrandTotal(sc.getGrandTotal().add(new BigDecimal(product.getOurPrice()).multiply(new BigDecimal(1))));
+		double subTotal = product.getOurPrice() * 1;
+		sc.setGrandTotal(sc.getGrandTotal().add(new BigDecimal(subTotal)));
 		scService.save(sc);
 		System.out.println("Item Successfully Added!");
 		return new ResponseEntity<String>("Cart Item Added!", HttpStatus.OK);

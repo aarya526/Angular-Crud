@@ -6,7 +6,7 @@ tag.component('addTag', {
 
 		$scope.tag = {};
 		$scope.tags = [
-			{
+			/*{
 
 				"name": "Abhishek Arya",
 				"phone": "971711363",
@@ -30,103 +30,7 @@ tag.component('addTag', {
 				"phone": "971711363",
 				"subject": "D"
 
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "A"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "B"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "C"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "D"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "A"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "B"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "C"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "D"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "A"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "B"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "C"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "D"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "A"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "B"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "C"
-
-			}, {
-
-				"name": "Abhishek Arya",
-				"phone": "971711363",
-				"subject": "D"
-
-			}
+			}*/
 		];
 
 		$scope.submitTag = function() {

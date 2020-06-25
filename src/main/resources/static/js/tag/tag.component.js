@@ -5,7 +5,33 @@ tag.component('addTag', {
 
 
 		$scope.tag = {};
-		$scope.tags = [];
+		$scope.tags = [
+			/*			{
+			
+						"name": "Abhishek Arya",
+						"phone": "971711363",
+						"subject": "Economics"
+			
+					}, {
+			
+						"name": "Abhishek Arya",
+						"phone": "971711363",
+						"subject": "Economics"
+			
+					}, {
+			
+						"name": "Abhishek Arya",
+						"phone": "971711363",
+						"subject": "Economics"
+			
+					}, {
+			
+						"name": "Abhishek Arya",
+						"phone": "971711363",
+						"subject": "Economics"
+			
+					}*/
+		];
 
 		$scope.submitTag = function() {
 

@@ -11,9 +11,16 @@
 @import
 	url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
+.wrapper {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	background-color: transparent;
+	padding: 10px;
+}
+
 .sticker {
-	margin: 50px auto;
-	width: 450px;
+	margin: 10px auto 10px;
+	width: 100%;
 	border: 1px #333 solid;
 	text-align: center;
 	padding: 10px;
@@ -58,7 +65,6 @@
 		<i class="fas fa-plus"></i>
 	</button>
 	<div class="wrapper">
-
 		<div class="sticker" ng-repeat="t in tags">
 			<h2 class="sname">{{t.name}}</h2>
 			<h2 class="sno">Ph-{{t.phone}}</h2>

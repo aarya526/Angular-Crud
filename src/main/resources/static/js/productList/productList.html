@@ -27,7 +27,6 @@
 								<th>Info</th>
 								<th>Update</th>
 								<th>Delete</th>
-								<th>Add to Cart</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -44,9 +43,6 @@
 									ng-href="/#!/updateProduct/{{p.id}}">Update</a></td>
 								<td><a class="btn btn-outline-danger"
 									ng-click="remove(p.id)">Delete</a></td>
-								<td><a class="btn btn-outline-primary"
-									ng-controller="cartController" ng-click="addToCart(p.id)">Add
-										to Cart</a></td>
 							</tr>
 						</tbody>
 					</table>

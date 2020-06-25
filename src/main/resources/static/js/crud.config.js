@@ -1,4 +1,4 @@
-crudApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+crudApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
 	// $locationProvider.html5Mode({
 
@@ -8,7 +8,11 @@ crudApp.config(['$routeProvider', '$locationProvider', function ($routeProvider,
 	// });
 	$routeProvider.when('/', {
 
-		template: "<product-list></product-list>"
+		template: "<app-home></app-home>"
+
+	}).when('/productList', {
+
+		template: '<product-list></product-list>'
 
 	}).when('/addProduct', {
 
@@ -26,26 +30,9 @@ crudApp.config(['$routeProvider', '$locationProvider', function ($routeProvider,
 
 		template: '<product-category></product-category>'
 
-	})
-		// .when('/login', {
-		// 	template: '<login-controller></login-controller>'
-		// })
-		.otherwise('/');
+	}).when('/addTag', {
+
+		template: "<add-tag></add-tag>"
+	}).otherwise('/');
 
 }])
-// .run(['$rootScope', '$location', '$cookies', '$http',
-//     function ($rootScope, $location, $cookies, $http) {
-//         // keep user logged in after page refresh
-//         $rootScope.globals = $cookies.get('globals') || {};
-//         if ($rootScope.globals.currentUser) {
-//             $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-//         }
-
-//         $rootScope.$on('$locationChangeStart', function (event, next, current) {
-//             // redirect to login page if not logged in
-//             if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
-//                 $location.path('/login');
-//             }
-//         });
-//     }]);
-

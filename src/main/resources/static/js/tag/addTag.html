@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Tag</title>
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+<style>
+.tag {
+	text-transform: uppercase;
+	text-align: center;
+	border: 1px solid #333;
+	width: 33%;
+	margin: 0 auto 20px;
+	padding: 10px;
+}
+
+.tag h3 {
+	margin-bottom: 0;
+	font-style: bold;
+	margin-top: 0;
+}
+
+.addTag {
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+	padding: 10px 20px;
+	border-radius: 50%;
+	font-size: 30px;
+	font-style: bold;
+}
+
+@media print {
+	.addTag {
+		display: none;
+	}
+	.tag {
+		width: 33%;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.tag {
+		width: 100%;
+	}
+}
+</style>
+</head>
+<body>
+	<button type="button" class="btn btn-danger addTag" data-toggle="modal"
+		data-target="#myModal">
+		<i class="fas fa-plus"></i>
+	</button>
+	<div class="container">
+		<div id="wrapper">
+			<div class="tag" ng-repeat="e in tags">
+				<h3>{{e.name}}</h3>
+				<h3>PH-{{e.phone}}</h3>
+				<h3>{{e.subject}}</h3>
+			</div>
+		</div>
+	</div>
+	<!-- The Modal -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Add Tag</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<form ng-submit="submitTag()">
+						<div class="form-group">
+							<label for="name">Name:</label> <input type="text"
+								class="form-control" placeholder="Enter Name"
+								ng-model="tag.name" id="name">
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone:</label> <input type="number"
+								class="form-control" placeholder="Enter Phone"
+								ng-model="tag.phone" id="phone">
+						</div>
+						<div class="form-group">
+							<label for="subject">Subject:</label> <input type="text"
+								class="form-control" placeholder="Enter Subject"
+								ng-model="tag.subject" id="subject">
+						</div>
+						<button type="submit" class="btn btn-primary">Add</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

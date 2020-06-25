@@ -13,9 +13,28 @@
 
 .wrapper {
 	display: grid;
-	grid-template-columns: 33% 33% 33%;
+	grid-template-columns: 33.33% 33.33% 33.33%;
 	background-color: transparent;
 	padding: 10px;
+}
+
+.removeBtn {
+	position: absolute;
+	padding: 0;
+	top: 5px;
+	right: 10px;
+	background: transparent;
+	border-radius: 0;
+	border-color: #fff;
+	color: #333;
+	font-size: 20px;
+}
+
+.removeBtn:hover, .removeBtn:focus, .removeBtn:active {
+	color: #333;
+	background-color: transparent;
+	border-color: #fff;
+	box-shadow: none;
 }
 
 .sticker {
@@ -25,6 +44,7 @@
 	text-align: center;
 	padding: 10px;
 	text-transform: uppercase;
+	position: relative;
 }
 
 .sticker h2 {
@@ -50,11 +70,23 @@
 	.sticker {
 		width: 450px;
 	}
+	.wrapper {
+		display: grid;
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		background-color: transparent;
+		padding: 10px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
 	.sticker {
 		width: 100%;
+	}
+	.wrapper {
+		display: grid;
+		grid-template-columns: 100%;
+		background-color: transparent;
+		padding: 10px;
 	}
 }
 </style>
@@ -66,6 +98,10 @@
 	</button>
 	<div class="wrapper">
 		<div class="sticker" ng-repeat="t in tags">
+			<button type="button" class="btn btn-danger removeBtn"
+				ng-click="delete(t)">
+				<i class="far fa-times-circle"></i>
+			</button>
 			<h2 class="sname">{{t.name}}</h2>
 			<h2 class="sno">Ph-{{t.phone}}</h2>
 			<h2 class="sub">{{t.subject}}</h2>

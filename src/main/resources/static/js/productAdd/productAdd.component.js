@@ -46,7 +46,7 @@ product.component('productAdd', {
 
 						console.log('\nProduct Inserted!');
 						$scope.reset();
-						$window.location.href = "/#!/products";
+						$window.location.href = "/#!/productList";
 
 					}, function errorResponse(response) {
 
@@ -65,7 +65,7 @@ product.component('productAdd', {
 					Product.update(product, function successResponse() {
 						console.log('\nProduct Updated!');
 						$scope.reset();
-						$window.location.href = "/#!/products";
+						$window.location.href = "/#!/productList";
 					}, function errorResponse(response) {
 
 						console.log(response.data);

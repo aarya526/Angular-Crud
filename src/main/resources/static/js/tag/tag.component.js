@@ -11,6 +11,7 @@ tag.component('addTag', {
 
 			$scope.tags.push($scope.tag);
 			$scope.clear();
+			$('#myModal').modal("hide");
 
 		}
 

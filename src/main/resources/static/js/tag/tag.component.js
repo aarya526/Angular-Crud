@@ -51,10 +51,8 @@ tag.component('addTag', {
 
 			var removeIndex = $scope.tags.indexOf(tag);
 			if (removeIndex != -1) {
-
 				console.log($scope.tags[removeIndex]);
 				$scope.tags.splice(removeIndex, 1);
-
 			}
 		}
 
